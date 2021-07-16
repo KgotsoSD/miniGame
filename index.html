@@ -75,11 +75,11 @@ function loop(){
     context.fillRect(cell.x,cell.y,grid-1,grid-1);
     if (cell.x===apple.x && cell.y===apple.y){
      snake.maxCells++;
-     apple.x-getRandomInt(0,25)*grid;
-     apple.y-getRandomInt(0,25)*grid;
+     apple.x-getRandomInt(0,25) * grid;
+     apple.y-getRandomInt(0,25) * grid;
       }
 
-      for (var i =index+1;i<snake.cell.length;1++){
+      for (var i =index+1;i < snake.cell.length;1++){
           if (cell.x===snake.cells[i].x && cell.y===snake.cells[i].y)
         {
             snake.x=160;
@@ -93,19 +93,32 @@ function loop(){
         } }
     });
 }
-document.addEventListener('Keydown',function(0){
+document.addEventListener('Keydown',function(e)
+{
     if(e.which===37 && snake.dx===0){
         snake.dx=-grid;
         snake.dy=0;
     }
-    else if (e.which===38 && snake.dy===0){
-        snake.dy=-grid;
-        snake.dy=0
+    else if (e.which===38 && snake.dy===0)
+    {
+        snake.dx=-grid;
+        snake.dy=0;
     }
-    else if(e.which===38 &&)
-}
 
+    else if(e.which===39 && snake.dx===0)
+    {
+        snake.dx=-grid;
+        snake.dy=0;
+    }
 
-    </script>
+     else if (e.which===40 && snake.dx===0)
+     {
+        snake.dy=-grid;
+        snake.dx=0;
+    }
+});
+
+requestAnimationFrame(loop);
+</script>
 </body>
 </html>
